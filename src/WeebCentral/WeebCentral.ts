@@ -150,8 +150,8 @@ export class WeebCentral
             for (const tag of query.includedTags) {
                 searchParams = searchParams.concat(`&included_tag=${tag.id}`)
             }
-            searchParams.concat(`limit=${LIMIT}&offset=${offset}`)
         }
+        searchParams = searchParams.concat(`&limit=${LIMIT}&offset=${offset}`)
         const request = App.createRequest({
             url: `${this.baseUrl}/search/data?sort=Best%20Match&order=Ascending&display_mode=Full%20Display${searchParams}`,
             method: 'GET',
